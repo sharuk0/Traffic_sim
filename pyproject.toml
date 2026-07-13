@@ -1,0 +1,31 @@
+[project]
+name = "traffic-sim-lima"
+version = "2.0.0"
+description = "Simulador microscópico de tráfico urbano con seguimiento vehicular tipo IDM"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = ["pygame-ce>=2.5,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+traffic-sim = "main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["traffic_sim", "traffic_sim.scenarios", "traffic_sim.rendering"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "ARG"]
