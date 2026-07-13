@@ -324,19 +324,8 @@ Más: geometría (parametrización por longitud de arco, continuidad G1 de los c
 
 Lint: `ruff check .` (limpio).
 
-## 10. Limitaciones
 
-Dichas sin rodeos:
-
-- **No hay modelo general de conflictos** dentro de la intersección: se depende de fases protegidas y de la aceptación de brecha en la rotonda (§2.7).
-- **No hay cambio de carril.** Cada vehículo elige su carril al entrar y lo mantiene hasta su conector.
-- **Sin peatones, ciclistas, ni paraderos.** Los buses son sólo vehículos largos y lentos, no hacen paradas.
-- **Parámetros no calibrados** contra aforos reales de Lima.
-- La brecha crítica de la rotonda es **homogénea**; no hay heterogeneidad de conductores.
-- La rotonda registra más frenadas fuertes que los escenarios señalizados: la decisión de ceder es binaria y se reevalúa en cada paso, lo que produce reacciones más decididas que las de un conductor real que anticipa de forma continua.
-- Sin coordinación semafórica en red (existe `offset`, pero hay un solo nodo por escenario).
-
-## 11. Posibles extensiones
+## 10. Posibles extensiones
 
 - Zonas de conflicto explícitas con reserva de puntos de cruce (permitiría giros a la izquierda *permitidos* con precaución, no sólo protegidos).
 - Cambio de carril (MOBIL).
@@ -345,7 +334,7 @@ Dichas sin rodeos:
 - Heterogeneidad de conductores (brecha crítica, `T` y `a_max` muestreados de una distribución).
 - Redes de varios nodos con coordinación semafórica (onda verde).
 
-## 12. Capturas / GIF
+## 11. Capturas / GIF
 
 ```bash
 # Ejecutar y grabar (Linux, con ffmpeg)
@@ -356,7 +345,7 @@ ffmpeg -i demo.mp4 -vf "fps=15,scale=800:-1" -loop 0 docs/roundabout.gif
 
 Sugerencia: grabar `four_way` (colas y fases protegidas), `roundabout` (prioridad al anillo) y `left_turn_only` con `D` activado para mostrar los IDs de carril.
 
-## 13. Tecnologías
+## 12. Tecnologías
 
 - **Python 3.11+** — `StrEnum`, dataclasses, type hints en todo el código
 - **pygame-ce 2.5+** — visualización
@@ -365,6 +354,6 @@ Sugerencia: grabar `four_way` (colas y fases protegidas), `roundabout` (priorida
 
 Sin NumPy ni SciPy: la distancia euclidiana es `math.hypot`, y las geometrías se resuelven con `math` y `bisect`. Se eliminó SciPy, que el proyecto original importaba entero para calcular una distancia entre dos puntos.
 
-## 15. Licencia
+## 13. Licencia
 
 MIT. Ver [LICENSE.md](LICENSE.md).
