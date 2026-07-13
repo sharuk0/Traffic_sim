@@ -2,8 +2,6 @@
 
 Simulación microscópica de intersecciones urbanas con **seguimiento vehicular continuo** (modelo tipo IDM), geometrías curvas parametrizadas por longitud de arco, semáforos como máquina de estados y una rotonda con aceptación de brecha. Escrito en Python 3.11+ con `pygame-ce`.
 
-> **Nota de honestidad técnica.** Una versión anterior de este proyecto se describía como un modelo de **autómatas celulares**. No lo era: el código usaba posición, velocidad y aceleración continuas con una lógica de car-following. Esta versión conserva y corrige ese enfoque, y lo documenta por lo que realmente es: un **modelo microscópico continuo de seguimiento vehicular**. No hay ninguna cuadrícula de celdas ni reglas de transición discretas.
-
 ---
 
 ## 1. Motivación
