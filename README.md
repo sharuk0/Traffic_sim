@@ -365,19 +365,6 @@ Sugerencia: grabar `four_way` (colas y fases protegidas), `roundabout` (priorida
 
 Sin NumPy ni SciPy: la distancia euclidiana es `math.hypot`, y las geometrías se resuelven con `math` y `bisect`. Se eliminó SciPy, que el proyecto original importaba entero para calcular una distancia entre dos puntos.
 
-## 14. Relevancia académica
-
-Este proyecto demuestra experiencia en:
-
-- **Modelamiento matemático** — formulación de un sistema dinámico continuo de agentes acoplados (car-following), con parámetros interpretables y comportamiento acotado (velocidad no negativa, aceleración saturada, sin singularidades).
-- **Simulación de sistemas dinámicos discretizados** — elección justificada del esquema de integración (Euler semiimplícito), análisis de estabilidad con `dt` pequeño, y separación explícita entre el paso de integración y el de renderizado mediante un acumulador de tiempo fijo.
-- **Geometría computacional** — parametrización por longitud de arco de curvas de Bézier y arcos, con tablas de longitud acumulada y búsqueda binaria; continuidad G1 en los empalmes.
-- **Diseño algorítmico y optimización computacional** — eliminación de copias profundas en el camino caliente, búsqueda de líder en O(1) amortizado, cacheo de la geometría estática; ~240× tiempo real en un solo hilo.
-- **Diseño de experimentos** — ejecuciones deterministas parametrizadas por semilla, periodo de calentamiento, y un vehículo de prueba inyectado tras el régimen transitorio.
-- **Análisis de datos** — instrumentación de métricas (throughput, demora, colas, frenadas fuertes) desagregadas por ruta y exportables a CSV para su análisis posterior.
-
-**Este proyecto no utiliza computación cuántica**, ni machine learning, ni ningún componente que no esté justificado por el problema. Es un ejercicio de modelamiento y simulación clásica, hecho con cuidado.
-
 ## 15. Licencia
 
 MIT. Ver [LICENSE.md](LICENSE.md).
